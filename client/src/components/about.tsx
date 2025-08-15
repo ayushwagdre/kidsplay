@@ -4,24 +4,24 @@ export default function About() {
   const features = [
     {
       icon: "fas fa-lightbulb",
-      title: "Our Philosophy",
-      description: "Every child is unique and learns best through play, exploration, and hands-on experiences that spark their natural curiosity.",
+      title: "Our Philosophy 💡",
+      description: "Every child is unique and learns best through play, exploration, and hands-on experiences that spark their natural curiosity and wonder! ✨",
       bgColor: "bg-soft-yellow",
-      iconColor: "bg-warm-yellow"
+      iconColor: "bg-gradient-to-br from-warm-yellow to-rainbow-orange"
     },
     {
       icon: "fas fa-users",
-      title: "Our Approach", 
-      description: "Small class sizes, individualized attention, and a nurturing environment where children feel safe to explore and express themselves.",
+      title: "Our Approach 🤗", 
+      description: "Small class sizes, individualized attention, and a nurturing environment where children feel safe to explore and express themselves freely! 🌟",
       bgColor: "bg-sky-blue",
-      iconColor: "bg-bright-blue"
+      iconColor: "bg-gradient-to-br from-bright-blue to-turquoise"
     },
     {
       icon: "fas fa-trophy",
-      title: "Our Success",
-      description: "98% of our graduates excel in elementary school, equipped with strong social skills, confidence, and a lifelong love of learning.",
+      title: "Our Success 🏆",
+      description: "98% of our graduates excel in elementary school, equipped with strong social skills, confidence, and a lifelong love of learning! 🎉",
       bgColor: "bg-mint-green",
-      iconColor: "bg-fresh-green"
+      iconColor: "bg-gradient-to-br from-fresh-green to-lime-green"
     }
   ];
 
@@ -35,10 +35,10 @@ export default function About() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="font-fredoka text-4xl md:text-5xl text-gray-800 mb-6">Our Amazing Story</h2>
+          <h2 className="font-fredoka text-4xl md:text-5xl text-gray-800 mb-6">Our Amazing Story 📖✨</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             For over 15 years, we've been creating magical learning experiences that inspire curiosity, 
-            creativity, and confidence in every child who walks through our doors.
+            creativity, and confidence in every child who walks through our doors! 🌟🎨
           </p>
         </motion.div>
         

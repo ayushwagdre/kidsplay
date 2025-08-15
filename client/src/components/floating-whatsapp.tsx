@@ -8,23 +8,24 @@ export default function FloatingWhatsApp() {
   return (
     <motion.button
       onClick={handleWhatsAppClick}
-      className="fixed bottom-6 right-6 w-16 h-16 bg-green-500 rounded-full flex items-center justify-center shadow-xl hover:shadow-2xl transition-all duration-300 z-50 animate-pulse-soft"
+      className="fixed bottom-6 right-6 w-16 h-16 bg-gradient-to-br from-lime-green to-fresh-green rounded-full flex items-center justify-center shadow-xl hover:shadow-2xl transition-all duration-300 z-50 gradient-border"
       data-testid="button-whatsapp"
       whileHover={{ 
-        scale: 1.1,
+        scale: 1.2,
         rotate: 360,
       }}
-      whileTap={{ scale: 0.9 }}
+      whileTap={{ scale: 0.8 }}
       animate={{
-        y: [0, -10, 0],
+        y: [0, -15, 0],
+        rotate: [0, 10, -10, 0],
       }}
       transition={{
-        duration: 3,
+        duration: 4,
         repeat: Infinity,
         ease: "easeInOut",
       }}
     >
-      <i className="fab fa-whatsapp text-white text-2xl"></i>
+      <i className="fab fa-whatsapp text-white text-2xl wiggle"></i>
     </motion.button>
   );
 }

@@ -6,22 +6,22 @@ export default function Testimonials() {
 
   const testimonials = [
     {
-      name: "Sarah Johnson",
+      name: "Sarah Johnson 👩‍👧",
       image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100&q=80",
-      text: "Little Steps Academy has been incredible for our daughter Emma. She comes home excited about learning every day, and we've seen such growth in her confidence and creativity.",
-      gradient: "from-soft-yellow to-sky-blue"
+      text: "Little Steps Academy has been absolutely magical for our daughter Emma! 🌟 She comes home excited about learning every day, and we've seen such incredible growth in her confidence and creativity! ✨",
+      gradient: "from-candy-red via-rainbow-orange to-warm-yellow"
     },
     {
-      name: "Michael Chen", 
+      name: "Michael Chen 👨‍👦", 
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100&q=80",
-      text: "The teachers here truly care about each child's individual development. Our son Lucas has flourished academically and socially since joining Little Steps.",
-      gradient: "from-mint-green to-blush-pink"
+      text: "The teachers here truly care about each child's individual development! 💕 Our son Lucas has flourished academically and socially since joining Little Steps - it's been amazing to watch! 🎯",
+      gradient: "from-bright-blue via-turquoise to-soft-purple"
     },
     {
-      name: "Maria Rodriguez",
+      name: "Maria Rodriguez 👩‍👧‍👦",
       image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100&q=80", 
-      text: "We couldn't be happier with our choice. The curriculum is engaging, the facilities are beautiful, and most importantly, our daughter loves going to school every day!",
-      gradient: "from-blush-pink to-lavender"
+      text: "We couldn't be happier with our choice! 🎉 The curriculum is engaging, the facilities are beautiful, and most importantly, our daughter loves going to school every single day! 💖",
+      gradient: "from-lime-green via-fresh-green to-turquoise"
     }
   ];
 
@@ -43,9 +43,9 @@ export default function Testimonials() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="font-fredoka text-4xl md:text-5xl text-gray-800 mb-6">What Parents Say</h2>
+          <h2 className="font-fredoka text-4xl md:text-5xl text-gray-800 mb-6">What Parents Say 💬</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Hear from our amazing parent community about their experiences at Little Steps Academy.
+            Hear from our amazing parent community about their wonderful experiences at Little Steps Academy! 🌟
           </p>
         </motion.div>
         

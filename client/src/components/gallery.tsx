@@ -65,9 +65,9 @@ export default function Gallery() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="font-fredoka text-4xl md:text-5xl text-gray-800 mb-6">Our Happy Moments</h2>
+          <h2 className="font-fredoka text-4xl md:text-5xl text-gray-800 mb-6">Our Happy Moments 📸</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Take a peek into our vibrant classrooms, exciting activities, and the joy of learning that fills our academy every day.
+            Take a peek into our vibrant classrooms, exciting activities, and the pure joy of learning that fills our academy every single day! 🌈✨
           </p>
         </motion.div>
         
@@ -101,13 +101,13 @@ export default function Gallery() {
           viewport={{ once: true }}
         >
           <motion.button 
-            className="bg-gradient-to-r from-warm-pink to-soft-purple text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-xl transition-all duration-300 card-hover"
+            className="bg-gradient-to-r from-candy-red via-warm-pink to-soft-purple text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-xl transition-all duration-300 card-hover shadow-lg"
             data-testid="button-view-full-gallery"
-            whileHover={{ scale: 1.05, y: -2 }}
+            whileHover={{ scale: 1.05, y: -2, rotate: 3 }}
             whileTap={{ scale: 0.95 }}
           >
             <i className="fas fa-images mr-2"></i>
-            View Full Gallery
+            View Full Gallery 🎨
           </motion.button>
         </motion.div>
       </div>

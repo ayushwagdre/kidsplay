@@ -3,43 +3,43 @@ import { motion } from "framer-motion";
 export default function Programs() {
   const programs = [
     {
-      title: "Toddler Program",
+      title: "Toddler Program 🍼",
       ageRange: "Ages 18 months - 3 years",
       icon: "fas fa-baby",
-      gradient: "from-warm-yellow to-warm-pink",
+      gradient: "from-candy-red via-rainbow-orange to-warm-yellow",
       features: [
-        "Sensory play and exploration",
-        "Language development activities", 
-        "Social skills through play",
-        "Music and movement"
+        "🎨 Sensory play and exploration",
+        "💬 Language development activities", 
+        "👫 Social skills through play",
+        "🎵 Music and movement"
       ],
-      buttonGradient: "from-warm-yellow to-warm-pink"
+      buttonGradient: "from-candy-red via-rainbow-orange to-warm-yellow"
     },
     {
-      title: "Pre-K Program", 
+      title: "Pre-K Program 🎯", 
       ageRange: "Ages 3 - 4 years",
       icon: "fas fa-child",
-      gradient: "from-bright-blue to-soft-purple",
+      gradient: "from-bright-blue via-turquoise to-soft-purple",
       features: [
-        "Early literacy and numeracy",
-        "Creative arts and crafts",
-        "Science exploration",
-        "Independence building"
+        "📚 Early literacy and numeracy",
+        "🎨 Creative arts and crafts",
+        "🔬 Science exploration",
+        "💪 Independence building"
       ],
-      buttonGradient: "from-bright-blue to-soft-purple"
+      buttonGradient: "from-bright-blue via-turquoise to-soft-purple"
     },
     {
-      title: "Kindergarten",
+      title: "Kindergarten 🎓",
       ageRange: "Ages 4 - 5 years", 
       icon: "fas fa-graduation-cap",
-      gradient: "from-fresh-green to-warm-yellow",
+      gradient: "from-lime-green via-fresh-green to-turquoise",
       features: [
-        "School readiness skills",
-        "Advanced problem solving",
-        "Leadership development",
-        "Elementary prep"
+        "🏫 School readiness skills",
+        "🧩 Advanced problem solving",
+        "👑 Leadership development",
+        "⭐ Elementary prep"
       ],
-      buttonGradient: "from-fresh-green to-warm-yellow"
+      buttonGradient: "from-lime-green via-fresh-green to-turquoise"
     }
   ];
 
@@ -53,9 +53,9 @@ export default function Programs() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="font-fredoka text-4xl md:text-5xl text-gray-800 mb-6">Our Learning Programs</h2>
+          <h2 className="font-fredoka text-4xl md:text-5xl text-gray-800 mb-6">Our Learning Programs 🎓</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Age-appropriate curricula designed to nurture development through play, creativity, and structured learning activities.
+            Age-appropriate curricula designed to nurture development through play, creativity, and structured learning activities! 🎨📚
           </p>
         </motion.div>
         

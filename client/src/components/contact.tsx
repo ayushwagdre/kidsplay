@@ -61,9 +61,9 @@ export default function Contact() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="font-fredoka text-4xl md:text-5xl text-gray-800 mb-6">Get in Touch</h2>
+          <h2 className="font-fredoka text-4xl md:text-5xl text-gray-800 mb-6">Get in Touch 📞</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Ready to start your child's learning journey? We'd love to hear from you and answer any questions you may have.
+            Ready to start your child's magical learning journey? We'd love to hear from you and answer any questions you may have! 🌟
           </p>
         </motion.div>
         
@@ -76,7 +76,7 @@ export default function Contact() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h3 className="font-fredoka text-2xl text-gray-800 mb-6">Send us a Message</h3>
+            <h3 className="font-fredoka text-2xl text-gray-800 mb-6">Send us a Message 💌</h3>
             <form className="space-y-6" onSubmit={handleSubmit} data-testid="contact-form">
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
@@ -150,13 +150,13 @@ export default function Contact() {
               
               <motion.button 
                 type="submit" 
-                className="w-full bg-gradient-to-r from-warm-pink to-soft-purple text-white py-4 rounded-2xl font-semibold hover:shadow-xl transition-all duration-300 card-hover"
+                className="w-full bg-gradient-to-r from-candy-red via-warm-pink to-soft-purple text-white py-4 rounded-2xl font-semibold hover:shadow-xl transition-all duration-300 card-hover shadow-lg"
                 data-testid="button-send-message"
-                whileHover={{ scale: 1.02, y: -2 }}
+                whileHover={{ scale: 1.02, y: -2, rotate: 2 }}
                 whileTap={{ scale: 0.98 }}
               >
                 <i className="fas fa-paper-plane mr-2"></i>
-                Send Message
+                Send Message 🚀
               </motion.button>
             </form>
           </motion.div>
@@ -171,7 +171,7 @@ export default function Contact() {
           >
             {/* Contact Details */}
             <div className="bg-gradient-to-br from-mint-green to-blush-pink rounded-3xl p-8 shadow-xl">
-              <h3 className="font-fredoka text-2xl text-gray-800 mb-6">Contact Information</h3>
+              <h3 className="font-fredoka text-2xl text-gray-800 mb-6">Contact Information 📍</h3>
               <div className="space-y-4">
                 {contactInfo.map((info, index) => (
                   <motion.div

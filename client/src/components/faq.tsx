@@ -41,9 +41,9 @@ export default function FAQ() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="font-fredoka text-4xl md:text-5xl text-gray-800 mb-6">Frequently Asked Questions</h2>
+          <h2 className="font-fredoka text-4xl md:text-5xl text-gray-800 mb-6">Frequently Asked Questions ❓</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Get answers to common questions about our programs, enrollment, and daily activities.
+            Get answers to common questions about our amazing programs, enrollment, and daily activities! 🌟
           </p>
         </motion.div>
         

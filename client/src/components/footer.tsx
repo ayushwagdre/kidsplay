@@ -10,10 +10,10 @@ export default function Footer() {
   ];
 
   const socialLinks = [
-    { icon: "fab fa-facebook-f", href: "#", color: "bg-bright-blue" },
-    { icon: "fab fa-instagram", href: "#", color: "bg-warm-pink" },
-    { icon: "fab fa-twitter", href: "#", color: "bg-bright-blue" },
-    { icon: "fab fa-youtube", href: "#", color: "bg-fresh-green" }
+    { icon: "fab fa-facebook-f", href: "#", color: "bg-gradient-to-br from-bright-blue to-turquoise" },
+    { icon: "fab fa-instagram", href: "#", color: "bg-gradient-to-br from-warm-pink to-candy-red" },
+    { icon: "fab fa-twitter", href: "#", color: "bg-gradient-to-br from-bright-blue to-soft-purple" },
+    { icon: "fab fa-youtube", href: "#", color: "bg-gradient-to-br from-fresh-green to-lime-green" }
   ];
 
   const scrollToSection = (sectionId: string) => {
@@ -36,14 +36,14 @@ export default function Footer() {
             viewport={{ once: true }}
           >
             <div className="flex items-center space-x-3 mb-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-warm-yellow to-warm-pink rounded-2xl flex items-center justify-center">
+              <div className="w-12 h-12 bg-gradient-to-br from-candy-red via-rainbow-orange to-warm-yellow rounded-2xl flex items-center justify-center shadow-lg">
                 <i className="fas fa-graduation-cap text-white text-xl"></i>
               </div>
-              <h3 className="font-fredoka text-2xl">Little Steps Academy</h3>
+              <h3 className="font-fredoka text-2xl bg-gradient-to-r from-bright-blue to-soft-purple bg-clip-text text-transparent">Little Steps Academy 🌈</h3>
             </div>
             <p className="text-gray-400 mb-6 max-w-md">
-              Nurturing young minds through play-based learning, creativity, and endless discovery. 
-              Where every child's potential shines bright.
+              Nurturing young minds through play-based learning, creativity, and endless discovery! 🌟 
+              Where every child's potential shines bright and dreams come true! ✨
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((social, index) => (
@@ -91,8 +91,8 @@ export default function Footer() {
             transition={{ duration: 0.6, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            <h4 className="font-fredoka text-lg mb-6">Stay Updated</h4>
-            <p className="text-gray-400 mb-4">Subscribe to our newsletter for updates and parenting tips.</p>
+            <h4 className="font-fredoka text-lg mb-6">Stay Updated 📧</h4>
+            <p className="text-gray-400 mb-4">Subscribe to our newsletter for fun updates and amazing parenting tips! 💡</p>
             <form className="space-y-3" data-testid="newsletter-form">
               <input 
                 type="email" 
@@ -102,12 +102,12 @@ export default function Footer() {
               />
               <motion.button 
                 type="submit" 
-                className="w-full bg-gradient-to-r from-warm-pink to-soft-purple py-3 rounded-2xl font-semibold hover:shadow-lg transition-all duration-300"
+                className="w-full bg-gradient-to-r from-candy-red via-warm-pink to-soft-purple py-3 rounded-2xl font-semibold hover:shadow-lg transition-all duration-300 shadow-md"
                 data-testid="button-subscribe"
-                whileHover={{ scale: 1.02 }}
+                whileHover={{ scale: 1.02, rotate: 2 }}
                 whileTap={{ scale: 0.98 }}
               >
-                Subscribe
+                Subscribe 🎯
               </motion.button>
             </form>
           </motion.div>

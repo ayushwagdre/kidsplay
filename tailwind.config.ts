@@ -51,7 +51,7 @@ export default {
           "4": "hsl(var(--chart-4))",
           "5": "hsl(var(--chart-5))",
         },
-        // Little Steps Academy Colors
+        // Little Steps Academy Colors - Enhanced & More Kid-Friendly
         'soft-yellow': 'hsl(var(--soft-yellow))',
         'sky-blue': 'hsl(var(--sky-blue))',
         'mint-green': 'hsl(var(--mint-green))',
@@ -62,6 +62,10 @@ export default {
         'fresh-green': 'hsl(var(--fresh-green))',
         'warm-pink': 'hsl(var(--warm-pink))',
         'soft-purple': 'hsl(var(--soft-purple))',
+        'rainbow-orange': 'hsl(var(--rainbow-orange))',
+        'candy-red': 'hsl(var(--candy-red))',
+        'lime-green': 'hsl(var(--lime-green))',
+        'turquoise': 'hsl(var(--turquoise))',
       },
       fontFamily: {
         sans: ["var(--font-inter)"],

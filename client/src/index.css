@@ -25,17 +25,21 @@
   --ring: hsl(217, 91%, 60%);
   --radius: 1rem;
 
-  /* Little Steps Academy Colors */
-  --soft-yellow: hsl(49, 93%, 91%);
-  --sky-blue: hsl(214, 95%, 93%);
-  --mint-green: hsl(151, 81%, 91%);
-  --blush-pink: hsl(327, 73%, 97%);
-  --lavender: hsl(248, 53%, 97%);
-  --warm-yellow: hsl(54, 91%, 64%);
-  --bright-blue: hsl(217, 91%, 69%);
-  --fresh-green: hsl(156, 73%, 59%);
-  --warm-pink: hsl(329, 86%, 70%);
-  --soft-purple: hsl(258, 90%, 66%);
+  /* Little Steps Academy Colors - Enhanced & More Kid-Friendly */
+  --soft-yellow: hsl(48, 100%, 85%);
+  --sky-blue: hsl(200, 100%, 85%);
+  --mint-green: hsl(140, 100%, 85%);
+  --blush-pink: hsl(320, 100%, 90%);
+  --lavender: hsl(260, 100%, 90%);
+  --warm-yellow: hsl(45, 100%, 60%);
+  --bright-blue: hsl(210, 100%, 65%);
+  --fresh-green: hsl(145, 100%, 55%);
+  --warm-pink: hsl(330, 100%, 68%);
+  --soft-purple: hsl(270, 100%, 70%);
+  --rainbow-orange: hsl(30, 100%, 65%);
+  --candy-red: hsl(350, 100%, 65%);
+  --lime-green: hsl(90, 100%, 60%);
+  --turquoise: hsl(175, 100%, 60%);
 
   --font-fredoka: 'Fredoka One', cursive;
   --font-inter: 'Inter', sans-serif;
@@ -84,7 +88,24 @@
 
 @layer utilities {
   .gradient-bg {
-    background: linear-gradient(135deg, hsl(var(--soft-yellow)) 0%, hsl(var(--sky-blue)) 25%, hsl(var(--mint-green)) 50%, hsl(var(--blush-pink)) 75%, hsl(var(--lavender)) 100%);
+    background: linear-gradient(135deg, 
+      hsl(var(--soft-yellow)) 0%, 
+      hsl(var(--sky-blue)) 20%, 
+      hsl(var(--mint-green)) 40%, 
+      hsl(var(--blush-pink)) 60%, 
+      hsl(var(--lavender)) 80%, 
+      hsl(var(--soft-yellow)) 100%);
+  }
+
+  .rainbow-bg {
+    background: linear-gradient(135deg, 
+      hsl(var(--candy-red)) 0%, 
+      hsl(var(--rainbow-orange)) 16.66%, 
+      hsl(var(--warm-yellow)) 33.33%, 
+      hsl(var(--lime-green)) 50%, 
+      hsl(var(--turquoise)) 66.66%, 
+      hsl(var(--bright-blue)) 83.33%, 
+      hsl(var(--soft-purple)) 100%);
   }
 
   .floating-shape {
@@ -188,4 +209,47 @@
 
 .animate-pulse-soft {
   animation: pulse-soft 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-3deg); }
+  75% { transform: rotate(3deg); }
+}
+
+@keyframes rainbow-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.wiggle {
+  animation: wiggle 0.5s ease-in-out infinite;
+}
+
+.rainbow-text {
+  background: linear-gradient(45deg, 
+    hsl(var(--candy-red)), 
+    hsl(var(--rainbow-orange)), 
+    hsl(var(--warm-yellow)), 
+    hsl(var(--lime-green)), 
+    hsl(var(--turquoise)), 
+    hsl(var(--bright-blue)), 
+    hsl(var(--soft-purple)));
+  background-size: 300% 300%;
+  animation: rainbow-shift 3s ease infinite;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.gradient-border {
+  background: linear-gradient(white, white) padding-box,
+              linear-gradient(45deg, 
+                hsl(var(--candy-red)), 
+                hsl(var(--rainbow-orange)), 
+                hsl(var(--warm-yellow)), 
+                hsl(var(--lime-green)), 
+                hsl(var(--turquoise)), 
+                hsl(var(--bright-blue)), 
+                hsl(var(--soft-purple))) border-box;
+  border: 3px solid transparent;
 }

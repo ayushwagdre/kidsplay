@@ -47,10 +47,14 @@ export default function Navbar() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          <div className="w-12 h-12 bg-gradient-to-br from-warm-yellow to-warm-pink rounded-2xl flex items-center justify-center">
+          <motion.div 
+            className="w-12 h-12 bg-gradient-to-br from-candy-red via-rainbow-orange to-warm-yellow rounded-2xl flex items-center justify-center shadow-lg"
+            whileHover={{ rotate: 360 }}
+            transition={{ duration: 0.6 }}
+          >
             <i className="fas fa-graduation-cap text-white text-xl"></i>
-          </div>
-          <h1 className="font-fredoka text-2xl text-gray-800">Little Steps Academy</h1>
+          </motion.div>
+          <h1 className="font-fredoka text-2xl bg-gradient-to-r from-bright-blue to-soft-purple bg-clip-text text-transparent">Little Steps Academy 🌈</h1>
         </motion.div>
         
         <div className="hidden md:flex items-center space-x-8">
@@ -68,15 +72,15 @@ export default function Navbar() {
             </motion.button>
           ))}
           <motion.button 
-            className="bg-gradient-to-r from-warm-pink to-soft-purple text-white px-6 py-3 rounded-full hover:shadow-lg transition-all duration-300 font-medium"
+            className="bg-gradient-to-r from-candy-red via-rainbow-orange to-warm-yellow text-white px-6 py-3 rounded-full hover:shadow-lg transition-all duration-300 font-medium shadow-md"
             data-testid="button-book-tour"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.8 }}
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ scale: 1.05, rotate: 5 }}
             whileTap={{ scale: 0.95 }}
           >
-            Book Tour
+            Book Tour 🎯
           </motion.button>
         </div>
         

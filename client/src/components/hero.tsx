@@ -57,7 +57,7 @@ export default function Hero() {
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
                 Where Learning{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-warm-pink to-soft-purple">
+                <span className="text-transparent rainbow-text">
                   Feels Like Play!
                 </span>
               </motion.h1>
@@ -79,22 +79,22 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.6 }}
             >
               <motion.button 
-                className="bg-gradient-to-r from-warm-yellow to-warm-pink text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-xl transition-all duration-300 card-hover"
+                className="bg-gradient-to-r from-candy-red via-rainbow-orange to-warm-yellow text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-xl transition-all duration-300 card-hover shadow-lg"
                 data-testid="button-book-school-tour"
-                whileHover={{ scale: 1.05, y: -2 }}
+                whileHover={{ scale: 1.05, y: -2, rotate: 2 }}
                 whileTap={{ scale: 0.95 }}
               >
                 <i className="fas fa-calendar-alt mr-2"></i>
-                Book a School Tour
+                Book a School Tour 🎉
               </motion.button>
               <motion.button 
-                className="border-2 border-bright-blue text-bright-blue px-8 py-4 rounded-full text-lg font-semibold hover:bg-bright-blue hover:text-white transition-all duration-300"
+                className="border-3 border-bright-blue text-bright-blue px-8 py-4 rounded-full text-lg font-semibold hover:bg-bright-blue hover:text-white transition-all duration-300 shadow-lg"
                 data-testid="button-watch-story"
-                whileHover={{ scale: 1.05, y: -2 }}
+                whileHover={{ scale: 1.05, y: -2, rotate: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
                 <i className="fas fa-play mr-2"></i>
-                Watch Our Story
+                Watch Our Story 🎬
               </motion.button>
             </motion.div>
             
@@ -106,16 +106,16 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.8 }}
             >
               <div className="text-center" data-testid="stat-years">
-                <div className="font-fredoka text-3xl text-warm-pink">{counters.years}</div>
-                <div className="text-gray-600 text-sm">Years of Excellence</div>
+                <div className="font-fredoka text-4xl text-candy-red drop-shadow-md">{counters.years} ⭐</div>
+                <div className="text-gray-700 text-sm font-semibold">Years of Excellence</div>
               </div>
               <div className="text-center" data-testid="stat-students">
-                <div className="font-fredoka text-3xl text-bright-blue">{counters.students}</div>
-                <div className="text-gray-600 text-sm">Happy Students</div>
+                <div className="font-fredoka text-4xl text-bright-blue drop-shadow-md">{counters.students} 😊</div>
+                <div className="text-gray-700 text-sm font-semibold">Happy Students</div>
               </div>
               <div className="text-center" data-testid="stat-teachers">
-                <div className="font-fredoka text-3xl text-fresh-green">{counters.teachers}</div>
-                <div className="text-gray-600 text-sm">Expert Teachers</div>
+                <div className="font-fredoka text-4xl text-fresh-green drop-shadow-md">{counters.teachers} 👩‍🏫</div>
+                <div className="text-gray-700 text-sm font-semibold">Expert Teachers</div>
               </div>
             </motion.div>
           </motion.div>
@@ -136,10 +136,11 @@ export default function Hero() {
             
             {/* Floating elements around the image */}
             <motion.div 
-              className="absolute -top-4 -left-4 w-16 h-16 bg-warm-yellow rounded-full flex items-center justify-center animate-bounce-slow"
+              className="absolute -top-4 -left-4 w-16 h-16 bg-gradient-to-br from-warm-yellow to-rainbow-orange rounded-full flex items-center justify-center shadow-lg"
               animate={{ 
                 y: [0, -10, 0],
-                rotate: [0, 180, 360]
+                rotate: [0, 180, 360],
+                scale: [1, 1.1, 1]
               }}
               transition={{ 
                 duration: 3,
@@ -147,13 +148,14 @@ export default function Hero() {
                 ease: "easeInOut"
               }}
             >
-              <i className="fas fa-star text-white text-xl"></i>
+              <i className="fas fa-star text-white text-xl wiggle"></i>
             </motion.div>
             <motion.div 
-              className="absolute -bottom-4 -right-4 w-20 h-20 bg-warm-pink rounded-full flex items-center justify-center animate-pulse-soft"
+              className="absolute -bottom-4 -right-4 w-20 h-20 bg-gradient-to-br from-warm-pink to-candy-red rounded-full flex items-center justify-center shadow-lg"
               animate={{ 
-                scale: [1, 1.1, 1],
-                rotate: [0, -10, 0]
+                scale: [1, 1.2, 1],
+                rotate: [0, -10, 0],
+                y: [0, -5, 0]
               }}
               transition={{ 
                 duration: 4,
@@ -161,13 +163,14 @@ export default function Hero() {
                 ease: "easeInOut"
               }}
             >
-              <i className="fas fa-heart text-white text-2xl"></i>
+              <i className="fas fa-heart text-white text-2xl wiggle"></i>
             </motion.div>
             <motion.div 
-              className="absolute top-1/2 -right-8 w-12 h-12 bg-bright-blue rounded-full flex items-center justify-center animate-float"
+              className="absolute top-1/2 -right-8 w-12 h-12 bg-gradient-to-br from-bright-blue to-turquoise rounded-full flex items-center justify-center shadow-lg"
               animate={{ 
                 y: [0, -20, 0],
-                x: [0, 10, 0]
+                x: [0, 10, 0],
+                rotate: [0, 45, 0]
               }}
               transition={{ 
                 duration: 5,
@@ -175,7 +178,7 @@ export default function Hero() {
                 ease: "easeInOut"
               }}
             >
-              <i className="fas fa-puzzle-piece text-white"></i>
+              <i className="fas fa-puzzle-piece text-white wiggle"></i>
             </motion.div>
           </motion.div>
         </div>
