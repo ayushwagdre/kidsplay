@@ -60,12 +60,27 @@ app.use((req, res, next) => {
   // Other ports are firewalled. Default to 5000 if not specified.
   // this serves both the API and the client.
   // It is the only port that is not firewalled.
-  const port = parseInt(process.env.PORT || '5000', 10);
-  server.listen({
-    port,
-    host: "0.0.0.0",
-    reusePort: true,
-  }, () => {
+  const net = await import('net');
+  async function getAvailablePort(startPort: number): Promise<number> {
+    return new Promise((resolve) => {
+      function tryPort(port: number) {
+        const tester = net.createServer()
+          .once('error', () => tryPort(port + 1))
+          .once('listening', () => {
+            tester.close(() => resolve(port));
+          })
+          .listen(port);
+      }
+      tryPort(startPort);
+    });
+  }
+
+  const requestedPort = parseInt(process.env.PORT || '5000', 10);
+  const port = await getAvailablePort(requestedPort);
+  server.listen(port, "127.0.0.1", () => {
     log(`serving on port ${port}`);
+    if (port !== requestedPort) {
+      log(`Requested port ${requestedPort} was busy. Using port ${port} instead.`);
+    }
   });
 })();

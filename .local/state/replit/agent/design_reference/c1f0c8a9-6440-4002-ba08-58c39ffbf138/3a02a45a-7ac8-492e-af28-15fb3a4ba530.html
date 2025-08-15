@@ -1,0 +1,1042 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Little Steps Academy - Where Learning Feels Like Play!</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'soft-yellow': '#FEF3C7',
+                        'sky-blue': '#DBEAFE',
+                        'mint-green': '#D1FAE5',
+                        'blush-pink': '#FCE7F3',
+                        'lavender': '#EDE9FE',
+                        'warm-yellow': '#FDE047',
+                        'bright-blue': '#60A5FA',
+                        'fresh-green': '#34D399',
+                        'warm-pink': '#F472B6',
+                        'soft-purple': '#A78BFA'
+                    },
+                    fontFamily: {
+                        'fredoka': ['Fredoka One', 'cursive'],
+                        'inter': ['Inter', 'sans-serif']
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'bounce-slow': 'bounce 2s infinite',
+                        'pulse-soft': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' }
+                        }
+                    }
+                }
+            }
+        };
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One:wght@400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #FEF3C7 0%, #DBEAFE 25%, #D1FAE5 50%, #FCE7F3 75%, #EDE9FE 100%);
+        }
+        
+        .floating-shape {
+            position: absolute;
+            opacity: 0.6;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .floating-shape:nth-child(2n) {
+            animation-delay: -2s;
+        }
+        
+        .floating-shape:nth-child(3n) {
+            animation-delay: -4s;
+        }
+        
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .navbar-scrolled {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        
+        .parallax-layer {
+            transform-style: preserve-3d;
+        }
+        
+        .masonry-grid {
+            column-count: 3;
+            column-gap: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .masonry-grid {
+                column-count: 2;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .masonry-grid {
+                column-count: 1;
+            }
+        }
+        
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 1rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .masonry-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+</head>
+<body class="font-inter bg-white">
+    <!-- Floating Background Shapes -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <div class="floating-shape top-10 left-10 w-20 h-20 bg-warm-yellow rounded-full opacity-20"></div>
+        <div class="floating-shape top-32 right-20 w-16 h-16 bg-bright-blue rounded-full opacity-20"></div>
+        <div class="floating-shape top-64 left-1/4 w-12 h-12 bg-fresh-green rounded-full opacity-20"></div>
+        <div class="floating-shape top-96 right-1/3 w-24 h-24 bg-warm-pink rounded-full opacity-20"></div>
+        <div class="floating-shape bottom-32 left-20 w-18 h-18 bg-soft-purple rounded-full opacity-20"></div>
+        <div class="floating-shape bottom-64 right-10 w-14 h-14 bg-warm-yellow rounded-full opacity-20"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 py-4">
+        <div class="container mx-auto px-6 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-12 h-12 bg-gradient-to-br from-warm-yellow to-warm-pink rounded-2xl flex items-center justify-center">
+                    <i class="fas fa-graduation-cap text-white text-xl"></i>
+                </div>
+                <h1 class="font-fredoka text-2xl text-gray-800">Little Steps Academy</h1>
+            </div>
+            
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#home" class="text-gray-700 hover:text-bright-blue transition-colors font-medium">Home</a>
+                <a href="#about" class="text-gray-700 hover:text-bright-blue transition-colors font-medium">About</a>
+                <a href="#programs" class="text-gray-700 hover:text-bright-blue transition-colors font-medium">Programs</a>
+                <a href="#gallery" class="text-gray-700 hover:text-bright-blue transition-colors font-medium">Gallery</a>
+                <a href="#admissions" class="text-gray-700 hover:text-bright-blue transition-colors font-medium">Admissions</a>
+                <a href="#contact" class="text-gray-700 hover:text-bright-blue transition-colors font-medium">Contact</a>
+                <button class="bg-gradient-to-r from-warm-pink to-soft-purple text-white px-6 py-3 rounded-full hover:shadow-lg transition-all duration-300 font-medium">
+                    Book Tour
+                </button>
+            </div>
+            
+            <button id="mobile-menu-btn" class="md:hidden text-gray-800 text-2xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t mt-4 py-4">
+            <div class="container mx-auto px-6 space-y-4">
+                <a href="#home" class="block text-gray-700 hover:text-bright-blue transition-colors font-medium">Home</a>
+                <a href="#about" class="block text-gray-700 hover:text-bright-blue transition-colors font-medium">About</a>
+                <a href="#programs" class="block text-gray-700 hover:text-bright-blue transition-colors font-medium">Programs</a>
+                <a href="#gallery" class="block text-gray-700 hover:text-bright-blue transition-colors font-medium">Gallery</a>
+                <a href="#admissions" class="block text-gray-700 hover:text-bright-blue transition-colors font-medium">Admissions</a>
+                <a href="#contact" class="block text-gray-700 hover:text-bright-blue transition-colors font-medium">Contact</a>
+                <button class="w-full bg-gradient-to-r from-warm-pink to-soft-purple text-white px-6 py-3 rounded-full hover:shadow-lg transition-all duration-300 font-medium">
+                    Book Tour
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen gradient-bg flex items-center overflow-hidden">
+        <div class="container mx-auto px-6 py-20 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <div class="space-y-4">
+                        <h1 class="font-fredoka text-5xl md:text-7xl text-gray-800 leading-tight">
+                            Where Learning 
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-warm-pink to-soft-purple">
+                                Feels Like Play!
+                            </span>
+                        </h1>
+                        <p class="text-xl text-gray-600 leading-relaxed">
+                            Nurturing young minds through play-based learning, creativity, and endless discovery. 
+                            Join our magical educational journey where every child's potential shines bright.
+                        </p>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button class="bg-gradient-to-r from-warm-yellow to-warm-pink text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-xl transition-all duration-300 card-hover">
+                            <i class="fas fa-calendar-alt mr-2"></i>
+                            Book a School Tour
+                        </button>
+                        <button class="border-2 border-bright-blue text-bright-blue px-8 py-4 rounded-full text-lg font-semibold hover:bg-bright-blue hover:text-white transition-all duration-300">
+                            <i class="fas fa-play mr-2"></i>
+                            Watch Our Story
+                        </button>
+                    </div>
+                    
+                    <!-- Stats -->
+                    <div class="grid grid-cols-3 gap-6 pt-8">
+                        <div class="text-center">
+                            <div class="font-fredoka text-3xl text-warm-pink" data-counter="15">0</div>
+                            <div class="text-gray-600 text-sm">Years of Excellence</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="font-fredoka text-3xl text-bright-blue" data-counter="500">0</div>
+                            <div class="text-gray-600 text-sm">Happy Students</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="font-fredoka text-3xl text-fresh-green" data-counter="50">0</div>
+                            <div class="text-gray-600 text-sm">Expert Teachers</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <!-- Main hero image of children playing at school -->
+                    <img src="https://pixabay.com/get/g1d24eb0ceae3c6537fe885ec4ae617b780a14ace9c968a75f6593c64725c10c80c63c161558428fab72785959bbc5d983b1c6256ead5fbf9f859ca63e6aa6aa8_1280.jpg" 
+                         alt="Happy children playing and learning at preschool" 
+                         class="rounded-3xl shadow-2xl w-full h-auto parallax-layer" 
+                         data-mock="true" />
+                    
+                    <!-- Floating elements around the image -->
+                    <div class="absolute -top-4 -left-4 w-16 h-16 bg-warm-yellow rounded-full flex items-center justify-center animate-bounce-slow">
+                        <i class="fas fa-star text-white text-xl"></i>
+                    </div>
+                    <div class="absolute -bottom-4 -right-4 w-20 h-20 bg-warm-pink rounded-full flex items-center justify-center animate-pulse-soft">
+                        <i class="fas fa-heart text-white text-2xl"></i>
+                    </div>
+                    <div class="absolute top-1/2 -right-8 w-12 h-12 bg-bright-blue rounded-full flex items-center justify-center animate-float">
+                        <i class="fas fa-puzzle-piece text-white"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="font-fredoka text-4xl md:text-5xl text-gray-800 mb-6">Our Amazing Story</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    For over 15 years, we've been creating magical learning experiences that inspire curiosity, 
+                    creativity, and confidence in every child who walks through our doors.
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="space-y-8">
+                    <!-- Timeline -->
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4 card-hover p-6 rounded-2xl bg-soft-yellow">
+                            <div class="w-12 h-12 bg-warm-yellow rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-lightbulb text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-fredoka text-xl text-gray-800 mb-2">Our Philosophy</h3>
+                                <p class="text-gray-600">Every child is unique and learns best through play, exploration, and hands-on experiences that spark their natural curiosity.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4 card-hover p-6 rounded-2xl bg-sky-blue">
+                            <div class="w-12 h-12 bg-bright-blue rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-users text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-fredoka text-xl text-gray-800 mb-2">Our Approach</h3>
+                                <p class="text-gray-600">Small class sizes, individualized attention, and a nurturing environment where children feel safe to explore and express themselves.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4 card-hover p-6 rounded-2xl bg-mint-green">
+                            <div class="w-12 h-12 bg-fresh-green rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-trophy text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-fredoka text-xl text-gray-800 mb-2">Our Success</h3>
+                                <p class="text-gray-600">98% of our graduates excel in elementary school, equipped with strong social skills, confidence, and a lifelong love of learning.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <!-- Teacher with young children in classroom setting -->
+                    <img src="https://images.unsplash.com/photo-1544717297-fa95b6ee9643?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
+                         alt="Caring teacher working with young children in bright classroom" 
+                         class="rounded-3xl shadow-xl w-full h-auto" 
+                         data-mock="true" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="programs" class="py-20 bg-gradient-to-br from-soft-yellow to-sky-blue">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="font-fredoka text-4xl md:text-5xl text-gray-800 mb-6">Our Learning Programs</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Age-appropriate curricula designed to nurture development through play, creativity, and structured learning activities.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Toddler Program -->
+                <div class="bg-white rounded-3xl p-8 shadow-xl card-hover">
+                    <div class="text-center mb-6">
+                        <div class="w-20 h-20 bg-gradient-to-br from-warm-yellow to-warm-pink rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-baby text-white text-2xl"></i>
+                        </div>
+                        <h3 class="font-fredoka text-2xl text-gray-800 mb-2">Toddler Program</h3>
+                        <p class="text-bright-blue font-semibold">Ages 18 months - 3 years</p>
+                    </div>
+                    
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center text-gray-600">
+                            <i class="fas fa-check-circle text-fresh-green mr-3"></i>
+                            Sensory play and exploration
+                        </li>
+                        <li class="flex items-center text-gray-600">
+                            <i class="fas fa-check-circle text-fresh-green mr-3"></i>
+                            Language development activities
+                        </li>
+                        <li class="flex items-center text-gray-600">
+                            <i class="fas fa-check-circle text-fresh-green mr-3"></i>
+                            Social skills through play
+                        </li>
+                        <li class="flex items-center text-gray-600">
+                            <i class="fas fa-check-circle text-fresh-green mr-3"></i>
+                            Music and movement
+                        </li>
+                    </ul>
+                    
+                    <button class="w-full bg-gradient-to-r from-warm-yellow to-warm-pink text-white py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300">
+                        Learn More
+                    </button>
+                </div>
+                
+                <!-- Pre-K Program -->
+                <div class="bg-white rounded-3xl p-8 shadow-xl card-hover">
+                    <div class="text-center mb-6">
+                        <div class="w-20 h-20 bg-gradient-to-br from-bright-blue to-soft-purple rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-child text-white text-2xl"></i>
+                        </div>
+                        <h3 class="font-fredoka text-2xl text-gray-800 mb-2">Pre-K Program</h3>
+                        <p class="text-bright-blue font-semibold">Ages 3 - 4 years</p>
+                    </div>
+                    
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center text-gray-600">
+                            <i class="fas fa-check-circle text-fresh-green mr-3"></i>
+                            Early literacy and numeracy
+                        </li>
+                        <li class="flex items-center text-gray-600">
+                            <i class="fas fa-check-circle text-fresh-green mr-3"></i>
+                            Creative arts and crafts
+                        </li>
+                        <li class="flex items-center text-gray-600">
+                            <i class="fas fa-check-circle text-fresh-green mr-3"></i>
+                            Science exploration
+                        </li>
+                        <li class="flex items-center text-gray-600">
+                            <i class="fas fa-check-circle text-fresh-green mr-3"></i>
+                            Independence building
+                        </li>
+                    </ul>
+                    
+                    <button class="w-full bg-gradient-to-r from-bright-blue to-soft-purple text-white py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300">
+                        Learn More
+                    </button>
+                </div>
+                
+                <!-- Kindergarten Program -->
+                <div class="bg-white rounded-3xl p-8 shadow-xl card-hover">
+                    <div class="text-center mb-6">
+                        <div class="w-20 h-20 bg-gradient-to-br from-fresh-green to-warm-yellow rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-graduation-cap text-white text-2xl"></i>
+                        </div>
+                        <h3 class="font-fredoka text-2xl text-gray-800 mb-2">Kindergarten</h3>
+                        <p class="text-bright-blue font-semibold">Ages 4 - 5 years</p>
+                    </div>
+                    
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center text-gray-600">
+                            <i class="fas fa-check-circle text-fresh-green mr-3"></i>
+                            School readiness skills
+                        </li>
+                        <li class="flex items-center text-gray-600">
+                            <i class="fas fa-check-circle text-fresh-green mr-3"></i>
+                            Advanced problem solving
+                        </li>
+                        <li class="flex items-center text-gray-600">
+                            <i class="fas fa-check-circle text-fresh-green mr-3"></i>
+                            Leadership development
+                        </li>
+                        <li class="flex items-center text-gray-600">
+                            <i class="fas fa-check-circle text-fresh-green mr-3"></i>
+                            Elementary prep
+                        </li>
+                    </ul>
+                    
+                    <button class="w-full bg-gradient-to-r from-fresh-green to-warm-yellow text-white py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300">
+                        Learn More
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="font-fredoka text-4xl md:text-5xl text-gray-800 mb-6">Our Happy Moments</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Take a peek into our vibrant classrooms, exciting activities, and the joy of learning that fills our academy every day.
+                </p>
+            </div>
+            
+            <div class="masonry-grid">
+                <!-- Gallery images with varied activities -->
+                <!-- Children playing with colorful blocks and educational toys -->
+                <div class="masonry-item">
+                    <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300" 
+                         alt="Children building with colorful blocks in bright classroom" 
+                         class="w-full rounded-2xl shadow-lg cursor-pointer" 
+                         data-mock="true" />
+                </div>
+                
+                <!-- Outdoor playground with children on swings and slides -->
+                <div class="masonry-item">
+                    <img src="https://pixabay.com/get/g6083542bf0f05d0f3e173459a9ffd180ba7422a02ad3208038830157f5537bcb705b461977261e8c7cf403c8b94a5eb1160d91663599ba5a385e26234166c5ba_1280.jpg" 
+                         alt="Colorful playground equipment with children playing outdoors" 
+                         class="w-full rounded-2xl shadow-lg cursor-pointer" 
+                         data-mock="true" />
+                </div>
+                
+                <!-- Teacher reading to children in cozy reading corner -->
+                <div class="masonry-item">
+                    <img src="https://images.unsplash.com/photo-1491013516836-7db643ee125a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=350" 
+                         alt="Teacher reading colorful storybook to engaged children" 
+                         class="w-full rounded-2xl shadow-lg cursor-pointer" 
+                         data-mock="true" />
+                </div>
+                
+                <!-- Art and craft activity with children painting -->
+                <div class="masonry-item">
+                    <img src="https://pixabay.com/get/g7f224eb2476bb95c14adb70ca53f8f99d77cc421eaca1381987cd5c83ad42e9d67351d9c633e8c1f5d214ab016a3e54a2b999a3684f486b02d5325b9970c87ce_1280.jpg" 
+                         alt="Children engaged in colorful arts and crafts activities" 
+                         class="w-full rounded-2xl shadow-lg cursor-pointer" 
+                         data-mock="true" />
+                </div>
+                
+                <!-- Music and movement class -->
+                <div class="masonry-item">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300" 
+                         alt="Children enjoying music and movement class with instruments" 
+                         class="w-full rounded-2xl shadow-lg cursor-pointer" 
+                         data-mock="true" />
+                </div>
+                
+                <!-- Garden learning and nature exploration -->
+                <div class="masonry-item">
+                    <img src="https://pixabay.com/get/gbaadf22007abbd4f9e68db600f603721705ec2d56583304c004bb632d0292590a0359562a2f04b71b626cf8789ea5422ecc11fd818022dbf878357988fe3e1c7_1280.jpg" 
+                         alt="Children exploring nature and gardening activities outdoors" 
+                         class="w-full rounded-2xl shadow-lg cursor-pointer" 
+                         data-mock="true" />
+                </div>
+                
+                <!-- STEM learning with building blocks -->
+                <div class="masonry-item">
+                    <img src="https://images.unsplash.com/photo-1596464716127-f2a82984de30?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=350" 
+                         alt="Children working together on STEM building projects" 
+                         class="w-full rounded-2xl shadow-lg cursor-pointer" 
+                         data-mock="true" />
+                </div>
+                
+                <!-- Dramatic play and dress-up corner -->
+                <div class="masonry-item">
+                    <img src="https://images.unsplash.com/photo-1546026423-cc4642628d2b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300" 
+                         alt="Children engaged in imaginative dramatic play activities" 
+                         class="w-full rounded-2xl shadow-lg cursor-pointer" 
+                         data-mock="true" />
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button class="bg-gradient-to-r from-warm-pink to-soft-purple text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-xl transition-all duration-300 card-hover">
+                    <i class="fas fa-images mr-2"></i>
+                    View Full Gallery
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admissions Section -->
+    <section id="admissions" class="py-20 bg-gradient-to-br from-mint-green to-blush-pink">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="font-fredoka text-4xl md:text-5xl text-gray-800 mb-6">Join Our Family</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Start your child's educational journey with us. Our simple admission process ensures a smooth transition into our learning community.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Step 1 -->
+                <div class="bg-white rounded-3xl p-8 shadow-xl card-hover text-center">
+                    <div class="w-16 h-16 bg-gradient-to-br from-warm-yellow to-warm-pink rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-white font-fredoka text-2xl">1</span>
+                    </div>
+                    <h3 class="font-fredoka text-xl text-gray-800 mb-4">Schedule Tour</h3>
+                    <p class="text-gray-600 mb-6">Visit our campus and meet our amazing teachers and staff.</p>
+                    <button class="bg-warm-yellow text-white px-6 py-2 rounded-full font-semibold hover:shadow-lg transition-all duration-300">
+                        Book Now
+                    </button>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="bg-white rounded-3xl p-8 shadow-xl card-hover text-center">
+                    <div class="w-16 h-16 bg-gradient-to-br from-bright-blue to-soft-purple rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-white font-fredoka text-2xl">2</span>
+                    </div>
+                    <h3 class="font-fredoka text-xl text-gray-800 mb-4">Submit Application</h3>
+                    <p class="text-gray-600 mb-6">Complete our simple online application form.</p>
+                    <button class="bg-bright-blue text-white px-6 py-2 rounded-full font-semibold hover:shadow-lg transition-all duration-300">
+                        Apply Online
+                    </button>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="bg-white rounded-3xl p-8 shadow-xl card-hover text-center">
+                    <div class="w-16 h-16 bg-gradient-to-br from-fresh-green to-warm-yellow rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-white font-fredoka text-2xl">3</span>
+                    </div>
+                    <h3 class="font-fredoka text-xl text-gray-800 mb-4">Meet & Greet</h3>
+                    <p class="text-gray-600 mb-6">Introduce your child to their future classroom and friends.</p>
+                    <button class="bg-fresh-green text-white px-6 py-2 rounded-full font-semibold hover:shadow-lg transition-all duration-300">
+                        Schedule
+                    </button>
+                </div>
+                
+                <!-- Step 4 -->
+                <div class="bg-white rounded-3xl p-8 shadow-xl card-hover text-center">
+                    <div class="w-16 h-16 bg-gradient-to-br from-warm-pink to-soft-purple rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-white font-fredoka text-2xl">4</span>
+                    </div>
+                    <h3 class="font-fredoka text-xl text-gray-800 mb-4">Welcome!</h3>
+                    <p class="text-gray-600 mb-6">Begin the amazing learning adventure together.</p>
+                    <button class="bg-warm-pink text-white px-6 py-2 rounded-full font-semibold hover:shadow-lg transition-all duration-300">
+                        Start Date
+                    </button>
+                </div>
+            </div>
+            
+            <div class="text-center mt-16">
+                <div class="bg-white rounded-3xl p-8 shadow-xl max-w-2xl mx-auto">
+                    <h3 class="font-fredoka text-2xl text-gray-800 mb-4">Download Information Packet</h3>
+                    <p class="text-gray-600 mb-6">Get detailed information about our programs, tuition, and enrollment process.</p>
+                    <button class="bg-gradient-to-r from-warm-pink to-soft-purple text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-xl transition-all duration-300 card-hover">
+                        <i class="fas fa-download mr-2"></i>
+                        Download PDF
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="font-fredoka text-4xl md:text-5xl text-gray-800 mb-6">What Parents Say</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Hear from our amazing parent community about their experiences at Little Steps Academy.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-gradient-to-br from-soft-yellow to-sky-blue rounded-3xl p-8 shadow-xl card-hover">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mr-4">
+                            <img src="https://pixabay.com/get/g4fec6d7a561888dcc803b68aa9b846fecdd87c62064d9caa50e90b2412a9c70c3d8d89dffd48a24039ac7eb132dd68734806f6d2263f5eadae73d009cb1b4655_1280.jpg" 
+                                 alt="Happy parent Sarah Johnson testimonial photo" 
+                                 class="w-14 h-14 rounded-full object-cover" 
+                                 data-mock="true" />
+                        </div>
+                        <div>
+                            <h4 class="font-fredoka text-lg text-gray-800">Sarah Johnson</h4>
+                            <div class="flex text-warm-yellow">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">
+                        "Little Steps Academy has been incredible for our daughter Emma. She comes home excited about learning every day, and we've seen such growth in her confidence and creativity."
+                    </p>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-gradient-to-br from-mint-green to-blush-pink rounded-3xl p-8 shadow-xl card-hover">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mr-4">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100&q=80" 
+                                 alt="Satisfied parent Michael Chen testimonial photo" 
+                                 class="w-14 h-14 rounded-full object-cover" 
+                                 data-mock="true" />
+                        </div>
+                        <div>
+                            <h4 class="font-fredoka text-lg text-gray-800">Michael Chen</h4>
+                            <div class="flex text-warm-yellow">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">
+                        "The teachers here truly care about each child's individual development. Our son Lucas has flourished academically and socially since joining Little Steps."
+                    </p>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-gradient-to-br from-blush-pink to-lavender rounded-3xl p-8 shadow-xl card-hover">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mr-4">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100&q=80" 
+                                 alt="Grateful parent Maria Rodriguez testimonial photo" 
+                                 class="w-14 h-14 rounded-full object-cover" 
+                                 data-mock="true" />
+                        </div>
+                        <div>
+                            <h4 class="font-fredoka text-lg text-gray-800">Maria Rodriguez</h4>
+                            <div class="flex text-warm-yellow">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">
+                        "We couldn't be happier with our choice. The curriculum is engaging, the facilities are beautiful, and most importantly, our daughter loves going to school every day!"
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-gradient-to-br from-lavender to-soft-yellow">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="font-fredoka text-4xl md:text-5xl text-gray-800 mb-6">Frequently Asked Questions</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Get answers to common questions about our programs, enrollment, and daily activities.
+                </p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+                    <button class="w-full p-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors faq-toggle">
+                        <h3 class="font-fredoka text-lg text-gray-800">What are your operating hours?</h3>
+                        <i class="fas fa-chevron-down text-bright-blue transition-transform faq-icon"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6">
+                        <p class="text-gray-600">We're open Monday through Friday from 7:00 AM to 6:00 PM. We also offer extended care options for working parents who need earlier drop-off or later pick-up times.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+                    <button class="w-full p-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors faq-toggle">
+                        <h3 class="font-fredoka text-lg text-gray-800">What is your student-to-teacher ratio?</h3>
+                        <i class="fas fa-chevron-down text-bright-blue transition-transform faq-icon"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6">
+                        <p class="text-gray-600">We maintain small class sizes with a maximum ratio of 8:1 for toddlers, 10:1 for pre-K, and 12:1 for kindergarten. This ensures personalized attention for every child.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 3 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+                    <button class="w-full p-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors faq-toggle">
+                        <h3 class="font-fredoka text-lg text-gray-800">Do you provide meals and snacks?</h3>
+                        <i class="fas fa-chevron-down text-bright-blue transition-transform faq-icon"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6">
+                        <p class="text-gray-600">Yes! We provide nutritious breakfast, lunch, and afternoon snacks. Our menu is designed by a pediatric nutritionist and accommodates various dietary restrictions and allergies.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 4 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+                    <button class="w-full p-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors faq-toggle">
+                        <h3 class="font-fredoka text-lg text-gray-800">What safety measures do you have in place?</h3>
+                        <i class="fas fa-chevron-down text-bright-blue transition-transform faq-icon"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6">
+                        <p class="text-gray-600">Safety is our top priority. We have secure entry systems, background-checked staff, security cameras, and follow strict health and safety protocols. All teachers are CPR and first aid certified.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="font-fredoka text-4xl md:text-5xl text-gray-800 mb-6">Get in Touch</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Ready to start your child's learning journey? We'd love to hear from you and answer any questions you may have.
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-16">
+                <!-- Contact Form -->
+                <div class="bg-gradient-to-br from-soft-yellow to-sky-blue rounded-3xl p-8 shadow-xl">
+                    <h3 class="font-fredoka text-2xl text-gray-800 mb-6">Send us a Message</h3>
+                    <form class="space-y-6" data-mock="true">
+                        <!-- TODO: Implement form submission logic -->
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-gray-700 font-medium mb-2">Parent Name</label>
+                                <input type="text" class="w-full px-4 py-3 rounded-2xl border border-gray-200 focus:border-bright-blue focus:outline-none transition-colors" placeholder="Your full name" data-mock="true">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 font-medium mb-2">Phone Number</label>
+                                <input type="tel" class="w-full px-4 py-3 rounded-2xl border border-gray-200 focus:border-bright-blue focus:outline-none transition-colors" placeholder="Your phone number" data-mock="true">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">Email Address</label>
+                            <input type="email" class="w-full px-4 py-3 rounded-2xl border border-gray-200 focus:border-bright-blue focus:outline-none transition-colors" placeholder="your.email@example.com" data-mock="true">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">Child's Age</label>
+                            <select class="w-full px-4 py-3 rounded-2xl border border-gray-200 focus:border-bright-blue focus:outline-none transition-colors" data-mock="true">
+                                <option>Select age range</option>
+                                <option>18 months - 2 years</option>
+                                <option>2 - 3 years</option>
+                                <option>3 - 4 years</option>
+                                <option>4 - 5 years</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">Message</label>
+                            <textarea rows="4" class="w-full px-4 py-3 rounded-2xl border border-gray-200 focus:border-bright-blue focus:outline-none transition-colors" placeholder="Tell us about your child and any questions you have..." data-mock="true"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-gradient-to-r from-warm-pink to-soft-purple text-white py-4 rounded-2xl font-semibold hover:shadow-xl transition-all duration-300 card-hover">
+                            <i class="fas fa-paper-plane mr-2"></i>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- Contact Info & Map -->
+                <div class="space-y-8">
+                    <!-- Contact Details -->
+                    <div class="bg-gradient-to-br from-mint-green to-blush-pink rounded-3xl p-8 shadow-xl">
+                        <h3 class="font-fredoka text-2xl text-gray-800 mb-6">Contact Information</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-bright-blue rounded-full flex items-center justify-center">
+                                    <i class="fas fa-map-marker-alt text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Address</h4>
+                                    <p class="text-gray-600">123 Learning Lane, Happy Valley, CA 90210</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-fresh-green rounded-full flex items-center justify-center">
+                                    <i class="fas fa-phone text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Phone</h4>
+                                    <p class="text-gray-600">(555) 123-KIDS (5437)</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-warm-pink rounded-full flex items-center justify-center">
+                                    <i class="fas fa-envelope text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Email</h4>
+                                    <p class="text-gray-600">hello@littlestepsacademy.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-warm-yellow rounded-full flex items-center justify-center">
+                                    <i class="fas fa-clock text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Hours</h4>
+                                    <p class="text-gray-600">Monday - Friday: 7:00 AM - 6:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Map Placeholder -->
+                    <div class="bg-gray-200 rounded-3xl h-64 shadow-xl flex items-center justify-center">
+                        <div class="text-center">
+                            <i class="fas fa-map-marked-alt text-4xl text-gray-400 mb-4"></i>
+                            <p class="text-gray-500 font-medium">Interactive Map</p>
+                            <p class="text-gray-400 text-sm">Google Maps Integration</p>
+                            <!-- TODO: Integrate Google Maps API -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-16">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <!-- Logo & Description -->
+                <div class="md:col-span-2">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-12 h-12 bg-gradient-to-br from-warm-yellow to-warm-pink rounded-2xl flex items-center justify-center">
+                            <i class="fas fa-graduation-cap text-white text-xl"></i>
+                        </div>
+                        <h3 class="font-fredoka text-2xl">Little Steps Academy</h3>
+                    </div>
+                    <p class="text-gray-400 mb-6 max-w-md">
+                        Nurturing young minds through play-based learning, creativity, and endless discovery. 
+                        Where every child's potential shines bright.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-bright-blue rounded-full flex items-center justify-center hover:bg-opacity-80 transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-warm-pink rounded-full flex items-center justify-center hover:bg-opacity-80 transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-bright-blue rounded-full flex items-center justify-center hover:bg-opacity-80 transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-fresh-green rounded-full flex items-center justify-center hover:bg-opacity-80 transition-colors">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-fredoka text-lg mb-6">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#about" class="text-gray-400 hover:text-warm-yellow transition-colors">About Us</a></li>
+                        <li><a href="#programs" class="text-gray-400 hover:text-warm-yellow transition-colors">Our Programs</a></li>
+                        <li><a href="#admissions" class="text-gray-400 hover:text-warm-yellow transition-colors">Admissions</a></li>
+                        <li><a href="#gallery" class="text-gray-400 hover:text-warm-yellow transition-colors">Gallery</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-warm-yellow transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Newsletter -->
+                <div>
+                    <h4 class="font-fredoka text-lg mb-6">Stay Updated</h4>
+                    <p class="text-gray-400 mb-4">Subscribe to our newsletter for updates and parenting tips.</p>
+                    <form class="space-y-3" data-mock="true">
+                        <!-- TODO: Implement newsletter subscription -->
+                        <input type="email" placeholder="Your email address" class="w-full px-4 py-3 rounded-2xl bg-gray-700 border border-gray-600 focus:border-bright-blue focus:outline-none transition-colors text-white" data-mock="true">
+                        <button type="submit" class="w-full bg-gradient-to-r from-warm-pink to-soft-purple py-3 rounded-2xl font-semibold hover:shadow-lg transition-all duration-300">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Little Steps Academy. All rights reserved. | Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/15551234567" target="_blank" class="fixed bottom-6 right-6 w-16 h-16 bg-green-500 rounded-full flex items-center justify-center shadow-xl hover:shadow-2xl transition-all duration-300 z-50 animate-pulse-soft">
+        <i class="fab fa-whatsapp text-white text-2xl"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script>
+        (function() {
+            // Navbar scroll effect
+            const navbar = document.getElementById('navbar');
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 100) {
+                    navbar.classList.add('navbar-scrolled');
+                } else {
+                    navbar.classList.remove('navbar-scrolled');
+                }
+            });
+
+            // Mobile menu toggle
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                        // Close mobile menu if open
+                        mobileMenu.classList.add('hidden');
+                    }
+                });
+            });
+
+            // Animated counters
+            const counters = document.querySelectorAll('[data-counter]');
+            const observerOptions = {
+                threshold: 0.7
+            };
+
+            const animateCounter = (counter) => {
+                const target = parseInt(counter.getAttribute('data-counter'));
+                let current = 0;
+                const increment = target / 100;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    counter.textContent = Math.floor(current);
+                }, 20);
+            };
+
+            const counterObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounter(entry.target);
+                        counterObserver.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            counters.forEach(counter => {
+                counterObserver.observe(counter);
+            });
+
+            // FAQ accordion functionality
+            const faqToggles = document.querySelectorAll('.faq-toggle');
+            
+            faqToggles.forEach(toggle => {
+                toggle.addEventListener('click', () => {
+                    const content = toggle.nextElementSibling;
+                    const icon = toggle.querySelector('.faq-icon');
+                    
+                    // Close all other FAQ items
+                    faqToggles.forEach(otherToggle => {
+                        if (otherToggle !== toggle) {
+                            const otherContent = otherToggle.nextElementSibling;
+                            const otherIcon = otherToggle.querySelector('.faq-icon');
+                            otherContent.classList.add('hidden');
+                            otherIcon.style.transform = 'rotate(0deg)';
+                        }
+                    });
+                    
+                    // Toggle current FAQ item
+                    content.classList.toggle('hidden');
+                    if (content.classList.contains('hidden')) {
+                        icon.style.transform = 'rotate(0deg)';
+                    } else {
+                        icon.style.transform = 'rotate(180deg)';
+                    }
+                });
+            });
+
+            // Gallery lightbox effect (basic implementation)
+            const galleryImages = document.querySelectorAll('.masonry-item img');
+            
+            galleryImages.forEach(img => {
+                img.addEventListener('click', () => {
+                    // TODO: Implement proper lightbox library
+                    const lightbox = document.createElement('div');
+                    lightbox.className = 'fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 cursor-pointer';
+                    lightbox.innerHTML = `
+                        <img src="${img.src}" alt="${img.alt}" class="max-w-full max-h-full object-contain rounded-lg">
+                        <button class="absolute top-4 right-4 text-white text-3xl hover:text-gray-300">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    `;
+                    
+                    lightbox.addEventListener('click', () => {
+                        document.body.removeChild(lightbox);
+                    });
+                    
+                    document.body.appendChild(lightbox);
+                });
+            });
+
+            // Add animation classes when elements come into view
+            const animatedElements = document.querySelectorAll('.card-hover, .masonry-item');
+            
+            const animationObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            animatedElements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                animationObserver.observe(el);
+            });
+        })();
+    </script>
+</body>
+</html>
