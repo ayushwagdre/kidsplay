@@ -42,19 +42,22 @@ export default function Navbar() {
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
         <motion.div 
-          className="flex items-center space-x-3"
+          className="flex items-center space-x-4"
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           <motion.div 
-            className="w-12 h-12 bg-gradient-to-br from-candy-red via-rainbow-orange to-warm-yellow rounded-2xl flex items-center justify-center shadow-lg"
-            whileHover={{ rotate: 360 }}
-            transition={{ duration: 0.6 }}
+            className="w-12 h-12 primary-gradient rounded-2xl flex items-center justify-center shadow-lg"
+            whileHover={{ scale: 1.1 }}
+            transition={{ duration: 0.3 }}
           >
             <i className="fas fa-graduation-cap text-white text-xl"></i>
           </motion.div>
-          <h1 className="font-fredoka text-2xl bg-gradient-to-r from-bright-blue to-soft-purple bg-clip-text text-transparent">Little Steps Academy 🌈</h1>
+          <div>
+            <h1 className="font-fredoka text-2xl text-text-dark">Little Steps Academy</h1>
+            <p className="text-xs text-text-medium">Modern Early Learning</p>
+          </div>
         </motion.div>
         
         <div className="hidden md:flex items-center space-x-8">
@@ -62,25 +65,26 @@ export default function Navbar() {
             <motion.button
               key={item.id}
               onClick={() => scrollToSection(item.id)}
-              className="text-gray-700 hover:text-bright-blue transition-colors font-medium"
+              className="text-text-medium hover:text-primary-blue transition-colors font-medium relative group"
               data-testid={`nav-link-${item.id}`}
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
             >
               {item.label}
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 primary-gradient group-hover:w-full transition-all duration-300"></span>
             </motion.button>
           ))}
           <motion.button 
-            className="bg-gradient-to-r from-candy-red via-rainbow-orange to-warm-yellow text-white px-6 py-3 rounded-full hover:shadow-lg transition-all duration-300 font-medium shadow-md"
+            className="primary-gradient text-white px-6 py-3 rounded-2xl hover:shadow-lg transition-all duration-300 font-medium"
             data-testid="button-book-tour"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.8 }}
-            whileHover={{ scale: 1.05, rotate: 5 }}
+            whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Book Tour 🎯
+            Book Tour
           </motion.button>
         </div>
         
