@@ -1,0 +1,75 @@
+Create a fully responsive, animated React website for a premium play school called "Little Steps Academy". The design should be colorful, magical, and kid-friendly, while also inspiring trust and professionalism for parents.
+
+Design Style & Theme:
+
+Vibrant pastel palette: soft yellow, sky blue, mint green, blush pink, and lavender
+
+Rounded, pill-shaped buttons and sections
+
+Hand-drawn doodle accents and floating cartoon icons (stars, clouds, balloons, animals, alphabet blocks)
+
+Large hero illustrations of happy children, teachers, and playful scenes
+
+Gentle gradient backgrounds with animated shapes
+
+Typography: playful handwritten-style headings (e.g., "Baloo", "Fredoka") + clean sans-serif for body text
+
+Animations & Interactions:
+
+Hero section: Parallax scrolling with layered illustrations moving at different speeds
+
+Floating shapes (balloons, stars, bubbles) that move slowly across the screen
+
+Cards with hover effects: lift up + shadow + subtle bounce
+
+Smooth page transitions using Framer Motion
+
+Animated counters for school stats (Years of Excellence, Happy Students, etc.)
+
+Testimonial carousel slider with fade-in/fade-out transitions
+
+Scroll-triggered animations (sections slide up/fade in when entering viewport)
+
+Pages/Sections:
+
+Home Page — Hero banner with animated illustrations, tagline "Where Learning Feels Like Play!", and a big "Book a School Tour" CTA button.
+
+About Us — Fun illustrated timeline showing the school’s story & teaching philosophy.
+
+Programs — Color-coded cards for Toddler, Pre-K, and Kindergarten with animated icons and hover effects.
+
+Gallery — Masonry-style grid of vibrant photos with lightbox preview.
+
+Admissions — Interactive step-by-step process with icons + downloadable PDF form.
+
+Testimonials — Animated slider with parent quotes, photos, and 5-star ratings.
+
+Contact Us — Map embed, quick contact form, and clickable phone/email buttons.
+
+Footer — Social media links, quick links, and newsletter subscription form.
+
+Features:
+
+Sticky navbar with color change on scroll
+
+Dark mode toggle with playful animations
+
+Interactive FAQ accordion with icon rotation
+
+Floating WhatsApp/Chatbot button for quick inquiry
+
+Mobile-first design with touch-friendly elements
+
+Tech Stack:
+
+React (latest version, functional components + hooks)
+
+Tailwind CSS for styling + DaisyUI for playful UI components
+
+Framer Motion for animations and transitions
+
+React Router for smooth navigation
+
+React Icons for icons and SVGs
+
+Lightbox for image preview in gallery
