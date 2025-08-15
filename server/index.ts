@@ -1,6 +1,25 @@
 import express, { type Request, Response, NextFunction } from "express";
+import { createServer } from "http";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
+(async () => {
+  // Function to find an available port
+  async function findAvailablePort(startPort: number): Promise<number> {
+    return new Promise((resolve) => {
+      const testServer = createServer();
+      const tryPort = (port: number) => {
+        testServer.listen(port, '0.0.0.0', () => {
+          testServer.close(() => {
+            resolve(port);
+          });
+        }).on('error', () => {
+          // Port is in use, try next port
+          tryPort(port + 1);
+        });
+      };
+      tryPort(startPort);
+    });
+  }
 
 const app = express();
 app.use(express.json());
@@ -36,7 +55,7 @@ app.use((req, res, next) => {
   next();
 });
 
-(async () => {
+  const httpServer = createServer(app);
   const server = await registerRoutes(app);
 
   app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
@@ -57,30 +76,23 @@ app.use((req, res, next) => {
   }
 
   // ALWAYS serve the app on the port specified in the environment variable PORT
-  // Other ports are firewalled. Default to 5000 if not specified.
+  // Other ports are firewalled. Default to 3000 if not specified.
+  // If the port is in use, automatically find the next available port.
   // this serves both the API and the client.
   // It is the only port that is not firewalled.
-  const net = await import('net');
-  async function getAvailablePort(startPort: number): Promise<number> {
-    return new Promise((resolve) => {
-      function tryPort(port: number) {
-        const tester = net.createServer()
-          .once('error', () => tryPort(port + 1))
-          .once('listening', () => {
-            tester.close(() => resolve(port));
-          })
-          .listen(port);
-      }
-      tryPort(startPort);
-    });
+  const defaultPort = parseInt(process.env.PORT || '3000', 10);
+  const port = await findAvailablePort(defaultPort);
+
+  if (port !== defaultPort) {
+    log(`Port ${defaultPort} is busy, using port ${port} instead`);
   }
 
-  const requestedPort = parseInt(process.env.PORT || '5000', 10);
-  const port = await getAvailablePort(requestedPort);
-  server.listen(port, "127.0.0.1", () => {
+  httpServer.listen(port, '0.0.0.0', () => {
     log(`serving on port ${port}`);
-    if (port !== requestedPort) {
-      log(`Requested port ${requestedPort} was busy. Using port ${port} instead.`);
+    if (port !== defaultPort) {
+      log(`💡 Your app is now available at:`);
+      log(`   Local:    http://localhost:${port}`);
+      log(`   Network:  http://127.0.0.1:${port}`);
     }
   });
 })();
